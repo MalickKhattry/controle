@@ -12,15 +12,16 @@ const routes: Routes = [
     canActivate:[AuthGuard],data: {roles:['USER','ADMIN']}
   },
   {
-    path:"customers",component:CustomersComponent
-
-  },
-  {
-    path:"bills/:customerId",component: BillsComponent,
+    path:"customers",component:CustomersComponent,
     canActivate:[AuthGuard],data: {roles:['USER','ADMIN']}
   },
   {
-    path:"bill-details/:billId",component:BillDetailsComponent
+    path:"bills/:customerId",component: BillsComponent,
+    canActivate:[AuthGuard],data: {roles:['ADMIN']}
+  },
+  {
+    path:"bill-details/:billId",component:BillDetailsComponent,
+    canActivate:[AuthGuard],data: {roles:['ADMIN']}
 
   },
 ];
